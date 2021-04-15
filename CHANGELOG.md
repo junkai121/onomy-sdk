@@ -1134,7 +1134,7 @@ that error is that the account doesn't exist.
   - Added a `ModuleAccount` for the mint module
   [\#4472](https://github.com/onomyprotocol/onomy-sdk/issues/4472) validation for crisis genesis
 * [\#3985](https://github.com/onomyprotocol/onomy-sdk/issues/3985) `ValidatorPowerRank` uses potential consensus power instead of tendermint power
-* [\#4104](https://github.com/onomyprotocol/onomy-sdk/issues/4104) Ochain has been moved to its own repository: https://github.com/cosmos/ochain
+* [\#4104](https://github.com/onomyprotocol/onomy-sdk/issues/4104) Ochain has been moved to its own repository: https://github.com/onomyprotocol/ochain
 * [\#4104](https://github.com/onomyprotocol/onomy-sdk/issues/4104) Rename ochaind.toml to app.toml. The internal contents of the application
   config remain unchanged.
 * [\#4159](https://github.com/onomyprotocol/onomy-sdk/issues/4159) create the default module patterns and module manager
@@ -3140,7 +3140,7 @@ FEATURES:
 
 BUG FIXES
 
-* Ochain now uses stake, ported from github.com/cosmos/ochain
+* Ochain now uses stake, ported from github.com/onomyprotocol/ochain
 
 
 ## 0.15.1 (April 29, 2018)

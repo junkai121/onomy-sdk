@@ -54,5 +54,5 @@ Running tests locally on a Mac require numerous repetitive password entries.
 - #5029 Add support for github.com/99designs/keyring-backed keybases [__MERGED__]
 - #5097 Add keys migrate command [__MERGED__]
 - #5180 Drop on-disk keybase in favor of keyring [_PENDING_REVIEW_]
-- cosmos/ochain#164 Drop on-disk keybase in favor of keyring (ochain's changes) [_PENDING_REVIEW_]
+- onomyprotocol/ochain#164 Drop on-disk keybase in favor of keyring (ochain's changes) [_PENDING_REVIEW_]
 

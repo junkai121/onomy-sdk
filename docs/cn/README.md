@@ -33,7 +33,7 @@ This documentation is not complete and it's outdated. Please use the English ver
 
 ## Cosmos Hub
 
-Cosmos Hub (名为 `ochain`) 文档已经迁移到[这里](https://github.com/cosmos/ochain/tree/master/docs).
+Cosmos Hub (名为 `ochain`) 文档已经迁移到[这里](https://github.com/onomyprotocol/ochain/tree/master/docs).
 
 ## 开发语言
 

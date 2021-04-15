@@ -46,9 +46,9 @@ Blockchain Node |  |           Consensus           |  |
 - 模块 `keeper` 的列表。 每个模块都会抽象定义一个 keeper，该 keeper 实现模块存储的读写。 一个模块的 `keeper` 方法可以从其他模块（如果已授权）中调用，这就是为什么它们在应用程序的类型中声明并作为接口导出到其他模块的原因，以便后者只能访问授权的功能。
 - 应用程序的 `codec` 用于序列化和反序列化数据结构以便存储它们，因为存储只能持久化 `[]bytes`。 `编解码器`必须是确定性的。 默认编解码器为 amino
 - 模块管理器是一个对象，其中包含应用程序模块的列表。 它简化了与这些模块相关的操作，例如注册 routes 操作，query route 操作或设置各种功能的模块之间顺序执行情况，例如 InitChainer 操作，BeginBlocke 操作和 EndBlocker 操作
-- 请参阅 [ochain](https://github.com/cosmos/ochain) 中的应用程序类型定义示例
+- 请参阅 [ochain](https://github.com/onomyprotocol/ochain) 中的应用程序类型定义示例
 
-+++ https://github.com/cosmos/ochain/blob/5bc422e6868d04747e50b467e8eeb31ae2fe98a3/app/app.go#L87-L115
++++ https://github.com/onomyprotocol/ochain/blob/5bc422e6868d04747e50b467e8eeb31ae2fe98a3/app/app.go#L87-L115
 
 ### Constructor Function
 
@@ -73,9 +73,9 @@ Blockchain Node |  |           Consensus           |  |
 - 挂载存储.
 - 返回应用实例.
 
-请注意，此函数仅创建该应用的一个实例，而如果重新启动节点，则状态将从 `〜/.app/data` 文件夹中保留下来状态加载，如果节点是第一次启动，则从创世文件生成。See an example of application constructor from [`ochain`](https://github.com/cosmos/ochain):
+请注意，此函数仅创建该应用的一个实例，而如果重新启动节点，则状态将从 `〜/.app/data` 文件夹中保留下来状态加载，如果节点是第一次启动，则从创世文件生成。See an example of application constructor from [`ochain`](https://github.com/onomyprotocol/ochain):
 
-+++ https://github.com/cosmos/ochain/blob/f41a660cdd5bea173139965ade55bd25d1ee3429/app/app.go#L110-L222
++++ https://github.com/onomyprotocol/ochain/blob/f41a660cdd5bea173139965ade55bd25d1ee3429/app/app.go#L110-L222
 
 ### InitChainer
 
@@ -83,12 +83,12 @@ InitChainer 用于根据创始文件（即创始账户的代币余额）初始�
 
 通常，`InitChainer`主要由每个应用程序模块的 InitGenesis 函数组成。 这是通过调用模块管理器的 InitGenesis 函数来完成的，而模块管理器的 InitGenesis 函数将依次调用其包含的每个模块的 InitGenesis 函数。 请注意，必须使用模块管理器的 SetOrderInitGenesis 方法设置模块的 InitGenesis 函数的顺序。 这是在 应用程序的构造函数 application-constructor 中完成的，必须在 SetInitChainer 之前调用 SetOrderInitGenesis。
 
-查看来自[ochain](https://github.com/cosmos/ochain)的 InitChainer 的示例：
+查看来自[ochain](https://github.com/onomyprotocol/ochain)的 InitChainer 的示例：
 
-See an example of an `InitChainer` from [`ochain`](https://github.com/cosmos/ochain):
+See an example of an `InitChainer` from [`ochain`](https://github.com/onomyprotocol/ochain):
 
-查看来自 [`ochain`](https://github.com/cosmos/ochain)的 `InitChainer` 的示例：
-+++ https://github.com/cosmos/ochain/blob/f41a660cdd5bea173139965ade55bd25d1ee3429/app/app.go#L235-L239
+查看来自 [`ochain`](https://github.com/onomyprotocol/ochain)的 `InitChainer` 的示例：
++++ https://github.com/onomyprotocol/ochain/blob/f41a660cdd5bea173139965ade55bd25d1ee3429/app/app.go#L235-L239
 
 ### BeginBlocker and EndBlocker
 
@@ -98,9 +98,9 @@ See an example of an `InitChainer` from [`ochain`](https://github.com/cosmos/och
 
 附带说明，请记住特定于应用程序的区块链是确定性的，这一点很重要。开发人员必须注意不要在 BeginBlocker 或 EndBlocker 中引入不确定性，还必须注意不要使它们在计算上过于昂贵，因为[gas]不会限制计算代价当调用 BeginBlocker 和 EndBlocker 执行。
 
-请参阅 [ochain](https://github.com/cosmos/ochain)中的 `BeginBlocker` 和 `EndBlocker` 函数的示例。
+请参阅 [ochain](https://github.com/onomyprotocol/ochain)中的 `BeginBlocker` 和 `EndBlocker` 函数的示例。
 
-+++ https://github.com/cosmos/ochain/blob/f41a660cdd5bea173139965ade55bd25d1ee3429/app/app.go#L224-L232
++++ https://github.com/onomyprotocol/ochain/blob/f41a660cdd5bea173139965ade55bd25d1ee3429/app/app.go#L224-L232
 
 ### Register Codec
 
@@ -108,9 +108,9 @@ MakeCodec 函数是 app.go 文件的最后一个重要功能。 此函数的目�
 
 为了注册应用程序的模块，`MakeCodec` 函数在 `ModuleBasics` 上调用 `RegisterLegacyAminoCodec`。`ModuleBasics` 是一个基本管理器，其中列出了应用程序的所有模块。 它在`init()`函数中得到实例化，仅用于注册应用程序模块的非依赖元素（例如编解码器）。 要了解有关基本模块管理器的更多信息，请点击[这里](https://docs.cosmos.network/master/building-modules/module-manager.html#basicmanager)。
 
-请参阅 [ochain](https://github.com/cosmos/ochain) 中的 `MakeCodec` 示例：
+请参阅 [ochain](https://github.com/onomyprotocol/ochain) 中的 `MakeCodec` 示例：
 
-+++ https://github.com/cosmos/ochain/blob/f41a660cdd5bea173139965ade55bd25d1ee3429/app/app.go#L64-L70
++++ https://github.com/onomyprotocol/ochain/blob/f41a660cdd5bea173139965ade55bd25d1ee3429/app/app.go#L64-L70
 
 ## Modules
 

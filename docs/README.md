@@ -69,7 +69,7 @@ aside: false
 
 ## Cosmos Hub
 
-The Cosmos Hub (`ochain`) docs have moved [here](https://github.com/cosmos/ochain/tree/master/docs).
+The Cosmos Hub (`ochain`) docs have moved [here](https://github.com/onomyprotocol/ochain/tree/master/docs).
 
 ## Languages
 

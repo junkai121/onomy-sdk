@@ -61,7 +61,7 @@ For more, please go to the [Cosmos SDK Docs](./docs/).
 
 ## Cosmos Hub Mainnet
 
-The Cosmos Hub application, `ochain`, has moved to its [own repository](https://github.com/cosmos/ochain). Go there to join the Cosmos Hub mainnet and more.
+The Cosmos Hub application, `ochain`, has moved to its [own repository](https://github.com/onomyprotocol/ochain). Go there to join the Cosmos Hub mainnet and more.
 
 ## Interblockchain Communication (IBC)
 

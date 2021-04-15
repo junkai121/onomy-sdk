@@ -69,7 +69,7 @@ As you can see, the weights are predefined in this case. Options exist to overri
 
 Here is how one can override the above package `simappparams`.
 
-+++ https://github.com/cosmos/ochain/blob/master/sims.mk#L9-L22
++++ https://github.com/onomyprotocol/ochain/blob/master/sims.mk#L9-L22
 
 For the last test a tool called runsim  <!-- # TODO: add link to runsim readme when its created --> is used, this is used to parallelize go test instances, provide info to Github and slack integrations to provide information to your team on how the simulations are running.  
 

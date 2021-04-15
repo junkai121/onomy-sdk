@@ -10,6 +10,6 @@ Migration can be performed via x/auth/legacy/v038/migrate.go. In addition, becau
 accounts are now generalized via an interface, it is now up to the application to
 define the concrete types and the respective client logic to add them to a genesis
 state/file. For an example implementation of the `add-genesis-account` command please
-refer to https://github.com/cosmos/ochain/pull/122.
+refer to https://github.com/onomyprotocol/ochain/pull/122.
 */
 package genaccounts
