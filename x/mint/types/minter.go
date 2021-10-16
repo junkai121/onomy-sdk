@@ -2,7 +2,7 @@ package types
 
 import (
 	"fmt"
-	"github.com/onomyprotocol/onomy-sdk/mint/mathd"
+	"github.com/cosmos/cosmos-sdk/mint/mathd"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
