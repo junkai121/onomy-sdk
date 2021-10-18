@@ -2,7 +2,7 @@ package types
 
 import (
 	"fmt"
-	"github.com/cosmos/cosmos-sdk/mint/mathd"
+	"github.com/cosmos/cosmos-sdk/x/mint/mathd"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
