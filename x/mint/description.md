@@ -75,14 +75,28 @@ The validator is the delegator as well, hence it's reward can be computed in the
   * current supply = 44409857 nom
   * initial supply (from genesis) = 44000000 nom
 
-* noms produced/minted now = ```44409857 - 44000000 = 409857nom``` (also we need to understand that some noms were bridged, 
-but the amount is low, so it will not affect the calculation)
+  * noms produced/minted now = ```44409857 - 44000000 = 409857nom``` (also we need to understand that some noms were bridged, 
+  but the amount is low, so it will not affect the calculation)
 
-* noms produced/minted now % = ```409857 / 44000000 = 0.00931493181 * 100 = 0.931493181%```
+  * noms produced/minted now % = ```409857 / 44000000 = 0.00931493181 * 100 = 0.931493181%```
 
-* if the year = 6311520 (param from mint), and latest block = 467025 until the end of the year 
-(with the assumption that the inflation was like current and remains the same) we will produce:
-```6311520 * 409857 / 467025 = 5538934.00276 or 5538934/44000000 = 0.12588486363 * 100 = 12.588486363%``` - which is in expected range.
+  * if the year = 6311520 (param from mint), and latest block = 467025 until the end of the year 
+  (with the assumption that the inflation was like current and remains the same) we will produce:
+  ```6311520 * 409857 / 467025 = 5538934.00276 or 5538934/44000000 = 0.12588486363 * 100 = 12.588486363%``` - which is in expected range.
 
 ### 2. Check that the reward of the delegator is expected
+
+
+Based on the current user state:
+
+  * user staked = 90000 nom
+  * stake time = 2d = 86400sec
+  * blocks produced 86400/5 = 17280
+  * inflation is 0.10 (10%)
+  * total supply 44409857 nom
+  * minted per block = inflation * totalSupply / params.BlocksPerYear ("blocks_per_year": "6311520")
+  * minted per block = 0.1 * 44409857 / 6311520 = 0.70363172421 nom
+  * minted for 2 days = 0.70363172421 * 17280 = 12158.7561943 nom
+  * total staked 466290 nom
+  * total reward of the staker for the 2days = 90000 / 466290 * 12158.7561943 * 0.9 (commission) = 2112.11746282 nom
 
